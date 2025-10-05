@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PWA Demo 🐶 + 📍 + 📸</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>PWA Demo 🐶 + 📍 + 📸</h1>
+
+  <!-- Geolocalização -->
+  <section>
+    <h2>1. Sua localização</h2>
+    <button onclick="getLocation()">Obter localização</button>
+    <p id="geoError" class="error"></p>
+    <p id="coords"></p>
+  </section>
+
+  <!-- Dog API -->
+  <section>
+    <h2>2. Dog API 🐾</h2>
+    <button onclick="fetchDog()">Buscar cachorro aleatório</button>
+    <div id="dogContainer"></div>
+  </section>
+
+  <!-- Câmera -->
+  <section>
+    <h2>3. Câmera</h2>
+    <button onclick="startCamera()" id="startBtn">Abrir câmera</button>
+    <button onclick="stopCamera()" id="stopBtn" style="display:none">Fechar câmera</button>
+    <button onclick="capturePhoto()" id="captureBtn" disabled>Capturar foto</button>
+    
+    <div class="camera-box">
+      <video id="video" muted playsinline></video>
+      <canvas id="canvas" style="display:none"></canvas>
+      <div id="photoResult"></div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
